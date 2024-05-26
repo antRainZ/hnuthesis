@@ -1,0 +1,123 @@
+%!TEX encoding = UTF-8 Unicode
+%!TEX program = xelatex
+
+\documentclass[doctor]{hnuthesis}
+\usepackage{subfigure}  %插入多图时用子图显示的宏包
+\usepackage{amsmath} % 提供更好的数学排版
+\usepackage{algorithmicx,algpseudocode}
+\usepackage{float}
+\usepackage{pifont}
+\usepackage{booktabs} % 提供更好的表格线  
+\usepackage{setspace} % 调整行间距 
+\usepackage{geometry} % 调整页面布局  
+\usepackage{setspace} % 调整文档的行间距
+\usepackage{makecell} % 设置表格单元格占用多行
+\usepackage{multirow}  
+\usepackage{array} % 对于更复杂的表格布局可能需要
+\usepackage{booktabs}
+\usepackage[export]{adjustbox} 
+
+% \usepackage[backend=biber,style=gb7714-2015,gbalign=center]{biblatex}
+
+\DeclareCaptionFont{myheiti}{\heiti\fontsize{10.5}{12.6}\selectfont} % 假设10.5pt近似于5号字体  
+% 使用\captionsetup设置标题的字体样式  
+\captionsetup{font={myheiti}}  
+
+% https://blog.csdn.net/weixin_45893881/article/details/135082097
+% \usepackage{ctex}
+% \usepackage[backend=biber,style=gb7714-2015,gbpub=false]{biblatex}
+% \addbibresource[location=local]{bibfile.bib} %注意这里bibfile.bib要替换成你的bib文件名
+
+
+% 学校代码
+\hnucode{10532}
+% 学校名称
+\hnuname{湖南大学}
+\enhnuname{Hunan University}
+% 中图分类号
+\clc{TP391}         
+% 密级
+\secrettext{不保密}           
+
+% 标题
+\title{基于COTS的星载计算机软件冗余容错技术研究}
+\entitle{Research on Software Redundancy and Fault Tolerance Technology of On-board Computer Based on COTS}
+% 作者
+\author{万孝国}
+\enauthor{WAN Xiaoguo}
+% \author{}
+% \enauthor{}
+% 学号
+\authorid{S2110W0846}
+% \authorid{}
+% 学院
+\college{信息科学与工程学院}
+% 专业
+\major{软件工程} 
+\enmajor{Software Engineering}
+%学士学位获得学校，年份
+\enbachelor{B.E.~(Yanshan University)2021}
+\endoctor{Master of engineering}
+% 研究方向
+\workon{冗余容错}
+% 导师
+\supervisor{张吉良教授、陈贤谋高级工程师}
+\ensupervisor{Professor Zhang Jiliang}
+\encosupervisor{Senior Engineer Chen Xianmou}
+% \supervisor{}
+% \ensupervisor{}
+% \encosupervisor{}
+
+% 论文提交、答辩日期
+\submitdate{2024 年 05 月 3 日}
+\defensedate{2024 年 05 月 21 日}
+\defensedate{}
+\endate{June, 2024}
+% 答辩委员会主席
+\chair{待定}
+
+
+\begin{document}
+% 封面、原创性声明
+\maketitle
+
+% 摘要
+\input{chapters/abstract}
+% 目录
+\tableofcontents
+
+% 插图附表索引
+\begingroup
+%latex在图表目录设置时自动识别章节并空出一定的间距
+	\renewcommand*{\addvspace}[1]{}
+	\newcommand{\loflabel}{图} 
+	\renewcommand{\numberline}[1]{\loflabel~#1\hspace*{1em}}	
+	\listoffigures
+	\newcommand{\lotlabel}{表}
+	\renewcommand{\numberline}[1]{\lotlabel~#1\hspace*{1em}}
+	\listoftables
+\endgroup
+
+
+% 正文章节
+\mainmatter
+
+\input{chapters/ch1}
+\input{chapters/ch2}
+\input{chapters/ch3}
+\input{chapters/ch4}
+% \input{chapters/ch5}
+\input{chapters/summary}
+\bibliography{references}
+% \printbibliography[heading=bibliography,title=参考文献]
+% 附录
+\appendix
+\input{chapters/publications}
+\input{chapters/projects}
+
+% 致谢
+\backmatter
+\input{chapters/acknowledgements}
+
+\end{document}
+
